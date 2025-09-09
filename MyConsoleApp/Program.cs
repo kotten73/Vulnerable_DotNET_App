@@ -1,11 +1,12 @@
 ﻿using System;
 using Newtonsoft.Json;
+using MathPlusLib;
 
 public class User
 {
-    public string Name { get; set; }
+    public required string Name { get; set; }
     public int Age { get; set; }
-    public string Role { get; set; }
+    public required string Role { get; set; }
 }
 
 public class Program
@@ -59,5 +60,7 @@ public class Program
             Console.WriteLine($"\nDeserialization error: {ex.Message}");
         }
 
+        double result = MathPlus.Fractional(24.5);
+        Console.WriteLine($"The fractional part of 24.5 is {result}");
     }
 }
